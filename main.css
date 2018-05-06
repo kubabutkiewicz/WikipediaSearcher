@@ -43,20 +43,21 @@ form {
     font-size: 18px;
     padding: 10px 10px 10px 5px;
     display: block;
-    width: 300px;
+    width: 80%;
     border: none;
     border-bottom: 1px solid #757575;
     background-color: transparent;
 }
+
 input:focus {
     outline: none;
 }
+
 #search:focus~label,
 #search:valid~label {
     top: -20px;
     font-size: 14px;
     color: #5264AE;
-    
 }
 
 label {
@@ -70,12 +71,13 @@ label {
     transition: 0.2s ease all;
     -moz-transition: 0.2s ease all;
     -webkit-transition: 0.2s ease all;
+    display: none;
 }
 
 .bar {
     position: relative;
     display: block;
-    width: 315px;
+    width: 84%;
 }
 
 .bar:before,
@@ -166,4 +168,81 @@ input:focus~.bar:after {
     background-color: #e53935;
     border: none;
     cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+.list {
+    width: 100%;
+    margin: 20px auto;
+}
+
+.list-item {
+    box-sizing: border-box;
+    width: 100%;
+    background-color: #E3F2FD;
+    font-size: 20px;
+    color: #424242;
+    list-style: none;
+    padding: 30px;
+    margin: 20px 0;
+}
+
+@media only screen and (max-width: 500px) {
+    .container {
+        width: 100%;
+    }
+    .card-title {
+        text-align: center;
+    }
+    form {
+        flex-direction: column;
+        justify-content: center;
+    }
+    #search {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    .highlight {
+        height: 35%;
+        width: 100px;
+        top: 0;
+        left: 20%;
+    }
+    .bar {
+        position: relative;
+        display: block;
+        width: 100%;
+    }
+    
+    .bar:before,
+    .bar:after {
+        bottom: 30px;
+        
+        transition: 0.2s ease all;
+        -moz-transition: 0.2s ease all;
+        -webkit-transition: 0.2s ease all;
+    }
+    
+    .bar:before {
+        left: 55%;
+    }
+    
+    .bar:after {
+        right: 45%;
+    }
+    
+    /* active state */
+    
+    #search:focus~.bar:before,
+    input:focus~.bar:after {
+        width: 55%;
+    }
 }
