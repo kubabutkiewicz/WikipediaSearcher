@@ -1,5 +1,4 @@
 const searchBtn = document.getElementById('search-btn');
-const list = document.querySelector('.list');
 
 function UI(data) {
     const list = document.querySelector('.list');
@@ -30,7 +29,6 @@ function getWiki(e) {
     fetch(url).then(function (response) {
         return response.json();
     }).then(function (data) {
-        console.log(data);
         UI(data);
     })
 
